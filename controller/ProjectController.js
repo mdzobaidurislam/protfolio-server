@@ -2,7 +2,7 @@ const Project = require("../models/PojectModel");
 
 //getAllInventory
 const getAllProject = async (req, res) => {
-  if (req.query) {
+  if (req.query.cat) {
     const result = await Project.find({ cat: req.query.cat });
     res.status(200).json(result);
   } else {
